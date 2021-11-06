@@ -1,0 +1,52 @@
+Tabelas
+
+IMAGEM (id_imagem, caminho_imagem?, blob_imagem?, nome_arquivo, extensao, data_criacao)
+COMENTARIO (id_comentario, titulo, texto, estrelas)
+
+USUARIO (id_usuario, usuario, senha, email, telefone, privilegio_administrador)
+
+ENDERECO (id_endereco, id_usuario, endereco, bairro, cidade, uf)
+
+CLIENTE (id_cliente, id_usuario, nome, cpf, id_endereco, passe_vip)
+ENTREGADOR (id_entregador, id_usuario, nome)
+VENDEDOR (id_vendedor, id_usuario, nome, cnpj, id_endereco, parceiro, caminho_imagem)
+VENDEDOR_PRODUTO (id_vendedor, id_produto, preco, quantidade)
+VENDEDOR_ESTOQUE (id_vendedor, id_produto, quantidade_modificada, data_criacao)
+VENDEDOR_ENTREGADOR (id_vendedor, id_entregador)
+VENDEDOR_IMAGEM (id_vendedor, id_imagem)
+VENDEDOR_FEEDBACK (id_vendedor, id_comentario, id_comentario_resposta)
+
+PRODUTO (id_produto, nome, descricao, caminho_imagem)
+PRODUTO_CATEGORIA (id_categoria, id_produto)
+PRODUTO_FEEDBACK (id_produto, id_comentario, id_comentario_resposta)
+PRODUTO_IMAGEM (id_produto, id_imagem)
+
+STATUS (id_status, descricao)
+
+ORDEM (id_ordem, id_cliente, id_vendedor, id_entregador, id_status, data_atualizacao, data_criacao)
+ORDEM_ITEM (id_ordem, id_produto, preco, quantidade, desconto)
+ORDEM_FEEDBACK (id_ordem, id_comentario, id_comentario_resposta)
+
+
+select name from sys.tables
+drop table VENDEDOR_ESTOQUE
+drop table VENDEDOR_ENTREGADOR
+drop table VENDEDOR_IMAGEM
+drop table VENDEDOR_FEEDBACK
+drop table PRODUTO
+drop table PRODUTO_CATEGORIA
+drop table PRODUTO_FEEDBACK
+drop table PRODUTO_IMAGEM
+drop table STATUS
+drop table ORDEM
+drop table ORDEM_ITEM
+drop table ORDEM_FEEDBACK
+drop table sysdiagrams
+drop table IMAGEM
+drop table COMENTARIO
+drop table USUARIO
+drop table ENDERECO
+drop table CLIENTE
+drop table ENTREGADOR
+drop table VENDEDOR
+drop table VENDEDOR_PRODUTO

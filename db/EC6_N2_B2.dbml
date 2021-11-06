@@ -1,0 +1,167 @@
+Table IMAGEM {
+    id_imagem int [pk, increment]
+    blob_imagem varchar(255) [not null]
+    nome_arquivo varchar(255) [unique, not null]
+    extensao varchar(20) [not null]
+    data_criacao datetime [not null] 
+}
+
+Table COMENTARIO {
+    id_comentario int [pk, increment]
+    titulo varchar(80) [not null]
+    texto varchar(255) [not null]
+    estrelas int [not null]
+}
+Table USUARIO {
+    id_usuario int [pk, increment]
+    usuario varchar(255) [not null]
+    senha varchar(255) [not null]
+    email varchar(255) [not null]
+    telefone varchar(255) [not null]
+    data_nascimento datetime [not null] 
+    privilegio_administrador bit [not null, default: 0]
+}
+Table ENDERECO {
+    id_endereco int [pk, increment]
+    id_usuario int [not null]
+    endereco varchar(255) [not null]
+    bairro varchar(255) [not null]
+    cidade varchar(255) [not null]
+    uf varchar(2) [not null]
+}
+Table CLIENTE {
+    id_cliente int [pk, increment]
+    id_usuario int [not null]
+    nome varchar(255) [not null]
+    cpf varchar(15) [not null]
+    id_endereco int [not null]
+    passe_vip bit [not null, default: 0]
+}
+Table ENTREGADOR {
+    id_entregador int [pk, increment]
+    id_usuario int [not null]
+    nome varchar(255) [not null]
+}
+Table VENDEDOR {
+    id_vendedor int [pk, increment]
+    id_usuario int [not null]
+    nome varchar(255) [not null]
+    cnpj varchar(255) [not null]
+    id_endereco int [not null]
+    parceiro varchar(255) [not null]
+    id_imagem int [not null]
+}
+Table VENDEDOR_PRODUTO {
+    id_vendedor int [not null]
+    id_produto int [not null]
+    preco float [not null]
+    quantidade int [not null]
+}
+Table VENDEDOR_ESTOQUE {
+    id_vendedor int [not null]
+    id_produto int [not null]
+    quantidade_modificada int [not null]
+    data_criacao datetime [not null]
+}
+Table VENDEDOR_ENTREGADOR {
+    id_vendedor int [not null]
+    id_entregador int [not null]
+}
+Table VENDEDOR_IMAGEM {
+    id_vendedor int [not null]
+    id_imagem int [not null]
+}
+Table VENDEDOR_COMENTARIO {
+    id_vendedor int [not null]
+    id_comentario int [not null]
+    id_comentario_resposta int [not null]
+}
+Table PRODUTO {
+    id_produto int [pk, increment]
+    nome varchar(255) [not null]
+    descricao varchar(255) [not null]
+    id_categoria int [not null]
+}
+Table PRODUTO_CATEGORIA {
+    id_categoria int [pk, not null]
+    nome varchar(255) [not null]
+}
+Table PRODUTO_COMENTARIO {
+    id_produto int [not null]
+    id_comentario int [not null]
+    id_comentario_resposta int [not null]
+}
+Table PRODUTO_IMAGEM {
+    id_produto int [not null]
+    id_imagem int [not null]
+}
+enum STATUS {
+    processamento
+    aceito
+    entrega
+    finalizado
+    recusado
+}
+Table ORDEM {
+    id_ordem int [pk, increment]
+    id_cliente int [not null]
+    id_vendedor int [not null]
+    id_entregador int [not null]
+    status STATUS
+    data_atualizacao datetime [not null]
+    data_criacao datetime [not null]
+}
+
+Table ORDEM_ITEM {
+    id_ordem int [not null]
+    id_produto int [not null]
+    preco float [not null]
+    quantidade int [not null]
+    desconto float [not null]
+}
+Table ORDEM_COMENTARIO {
+    id_ordem int [not null]
+    id_comentario int [not null]
+    id_comentario_resposta int [not null]
+}
+
+
+Ref: USUARIO.id_usuario - CLIENTE.id_usuario
+Ref: USUARIO.id_usuario < ENDERECO.id_usuario
+Ref: USUARIO.id_usuario - ENTREGADOR.id_usuario
+Ref: USUARIO.id_usuario - VENDEDOR.id_usuario
+
+Ref: ENDERECO.id_endereco < CLIENTE.id_endereco
+Ref: ENDERECO.id_endereco < VENDEDOR.id_endereco
+
+Ref: IMAGEM.id_imagem < VENDEDOR.id_imagem
+
+Ref: VENDEDOR.id_vendedor < VENDEDOR_PRODUTO.id_vendedor
+Ref: VENDEDOR.id_vendedor < VENDEDOR_COMENTARIO.id_vendedor
+Ref: VENDEDOR.id_vendedor < VENDEDOR_ESTOQUE.id_vendedor
+Ref: VENDEDOR.id_vendedor < VENDEDOR_ENTREGADOR.id_vendedor
+Ref: VENDEDOR.id_vendedor < VENDEDOR_IMAGEM.id_vendedor
+Ref: VENDEDOR.id_vendedor < ORDEM.id_vendedor
+
+Ref: PRODUTO.id_produto < PRODUTO_COMENTARIO.id_produto
+Ref: PRODUTO.id_produto < PRODUTO_IMAGEM.id_produto
+Ref: PRODUTO.id_produto < ORDEM_ITEM.id_produto
+Ref: PRODUTO.id_produto < VENDEDOR_PRODUTO.id_produto
+Ref: PRODUTO.id_produto < VENDEDOR_ESTOQUE.id_produto
+
+Ref: PRODUTO_CATEGORIA.id_categoria < PRODUTO.id_categoria
+
+Ref: IMAGEM.id_imagem < PRODUTO_IMAGEM.id_imagem
+Ref: IMAGEM.id_imagem < VENDEDOR_IMAGEM.id_imagem
+
+Ref: CLIENTE.id_cliente < ORDEM.id_cliente
+
+Ref: ENTREGADOR.id_entregador < ORDEM.id_entregador
+Ref: ENTREGADOR.id_entregador < VENDEDOR_ENTREGADOR.id_entregador
+
+Ref: COMENTARIO.id_comentario < VENDEDOR_COMENTARIO.id_comentario
+Ref: COMENTARIO.id_comentario < ORDEM_COMENTARIO.id_comentario
+Ref: COMENTARIO.id_comentario < PRODUTO_COMENTARIO.id_comentario
+
+Ref: ORDEM.id_ordem - ORDEM_ITEM.id_ordem
+Ref: ORDEM.id_ordem < ORDEM_COMENTARIO.id_ordem
