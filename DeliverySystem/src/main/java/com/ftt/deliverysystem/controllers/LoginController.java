@@ -10,6 +10,6 @@ package com.ftt.deliverysystem.controllers;
  *
  * @author lukas
  */
-public class UserController {
+public class LoginController {
 
 }
