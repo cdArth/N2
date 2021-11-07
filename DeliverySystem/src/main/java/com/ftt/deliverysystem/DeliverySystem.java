@@ -6,6 +6,8 @@
 
 package com.ftt.deliverysystem;
 
+import com.ftt.deliverysystem.dao.DatabaseConnection;
+
 /**
  *
  * @author lukas
@@ -16,6 +18,11 @@ public class DeliverySystem {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    // TODO code application logic here
+      System.err.println("iniciando a aplicação...");
+      
+      DatabaseConnection databaseConnection = new DatabaseConnection();
+      if(databaseConnection.getConnection() != null) {
+          //inicia a aplicação
+      }
   }
 }
