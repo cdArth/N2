@@ -3,11 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/*tutui passou aq*/
-package com.ftt.deliverysystem.dao;
+
+package com.ftt.deliverysystem;
 
 /**
  *
  * @author lukas
  */
-public class DaoInterface {}
+public class DeliverySystem {
+
+  /**
+   * @param args the command line arguments
+   */
+  public static void main(String[] args) {
+    // TODO code application logic here
+  }
+}
