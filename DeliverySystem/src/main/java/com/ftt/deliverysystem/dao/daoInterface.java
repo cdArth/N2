@@ -10,4 +10,4 @@ package com.ftt.deliverysystem.dao;
  *
  * @author lukas
  */
-public interface DaoInterface {}
+public class DaoInterface {}

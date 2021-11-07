@@ -6,74 +6,68 @@ package com.ftt.deliverysystem.models;
  */
 public class EnderecoModel {
 
-  private int _id_endereco;
-  private UserModel _usuario;
-  private String _endereco;
-  private String _bairro;
-  private String _cidade;
-  private String _uf;
+    private int id_endereco;
+    private UserModel usuario;
+    private String endereco;
+    private String bairro;
+    private String cidade;
+    private String uf;
 
-  public int getid_endereco() {
-    return this._id_endereco;
-  }
+    public EnderecoModel(int id_endereco, UserModel usuario, String endereco, String bairro, String cidade, String uf) {
+        this.id_endereco = id_endereco;
+        this.usuario = usuario;
+        this.endereco = endereco;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.uf = uf;
+    }
 
-  public void setid_endereco(int value) {
-    this._id_endereco = value;
-  }
+    public int getId_endereco() {
+        return id_endereco;
+    }
 
-  public UserModel getusuario() {
-    return this._usuario;
-  }
+    public void setId_endereco(int id_endereco) {
+        this.id_endereco = id_endereco;
+    }
 
-  public void setusuario(UserModel value) {
-    this._usuario = value;
-  }
+    public UserModel getUsuario() {
+        return usuario;
+    }
 
-  public String getendereco() {
-    return this._endereco;
-  }
+    public void setUsuario(UserModel usuario) {
+        this.usuario = usuario;
+    }
 
-  public void setendereco(String value) {
-    this._endereco = value;
-  }
+    public String getEndereco() {
+        return endereco;
+    }
 
-  public String getbairro() {
-    return this._bairro;
-  }
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
 
-  public void setbairro(String value) {
-    this._bairro = value;
-  }
+    public String getBairro() {
+        return bairro;
+    }
 
-  public String getcidade() {
-    return this._cidade;
-  }
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
 
-  public void setcidade(String value) {
-    this._cidade = value;
-  }
+    public String getCidade() {
+        return cidade;
+    }
 
-  public String getuf() {
-    return this._uf;
-  }
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
 
-  public void setuf(String value) {
-    this._uf = value;
-  }
+    public String getUf() {
+        return uf;
+    }
 
-  public EnderecoModel(
-    int id_endereco_,
-    UserModel usuario_,
-    String endereco_,
-    String bairro_,
-    String cidade_,
-    String uf_
-  ) {
-    this._id_endereco = id_endereco_;
-    this._usuario = usuario_;
-    this._endereco = endereco_;
-    this._bairro = bairro_;
-    this._cidade = cidade_;
-    this._uf = uf_;
-  }
+    public void setUf(String uf) {
+        this.uf = uf;
+    }
+
 }

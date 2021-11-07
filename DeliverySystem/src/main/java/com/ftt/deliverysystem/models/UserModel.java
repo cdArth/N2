@@ -1,79 +1,75 @@
 package com.ftt.deliverysystem.models;
 
+import java.sql.Date;
+
 /**
  *
  * @author lukas
  */
 public class UserModel {
 
-  private int _id_usuario;
-  private String _usuario;
-  private String _senha;
-  private String _email;
-  private String _telefone;
-  private java.sql.Date _data_nascimento;
+    private int _id_usuario;
+    private String _usuario;
+    private String _senha;
+    private String _email;
+    private String _telefone;
+    private java.sql.Date _data_nascimento;
 
-  public int getid_usuario() {
-    return this._id_usuario;
-  }
+    public UserModel(int _id_usuario, String _usuario, String _senha, String _email, String _telefone, Date _data_nascimento) {
+        this._id_usuario = _id_usuario;
+        this._usuario = _usuario;
+        this._senha = _senha;
+        this._email = _email;
+        this._telefone = _telefone;
+        this._data_nascimento = _data_nascimento;
+    }
 
-  public void setid_usuario(int value) {
-    this._id_usuario = value;
-  }
+    public int getId_usuario() {
+        return _id_usuario;
+    }
 
-  public String getusuario() {
-    return this._usuario;
-  }
+    public void setId_usuario(int _id_usuario) {
+        this._id_usuario = _id_usuario;
+    }
 
-  public void setusuario(String value) {
-    this._usuario = value;
-  }
+    public String getUsuario() {
+        return _usuario;
+    }
 
-  public String getsenha() {
-    return this._senha;
-  }
+    public void setUsuario(String _usuario) {
+        this._usuario = _usuario;
+    }
 
-  public void setsenha(String value) {
-    this._senha = value;
-  }
+    public String getSenha() {
+        return _senha;
+    }
 
-  public String getemail() {
-    return this._email;
-  }
+    public void setSenha(String _senha) {
+        this._senha = _senha;
+    }
 
-  public void setemail(String value) {
-    this._email = value;
-  }
+    public String getEmail() {
+        return _email;
+    }
 
-  public String gettelefone() {
-    return this._telefone;
-  }
+    public void setEmail(String _email) {
+        this._email = _email;
+    }
 
-  public void settelefone(String value) {
-    this._telefone = value;
-  }
+    public String getTelefone() {
+        return _telefone;
+    }
 
-  public java.sql.Date getdata_nascimento() {
-    return this._data_nascimento;
-  }
+    public void setTelefone(String _telefone) {
+        this._telefone = _telefone;
+    }
 
-  public void setdata_nascimento(java.sql.Date value) {
-    this._data_nascimento = value;
-  }
+    public Date getData_nascimento() {
+        return _data_nascimento;
+    }
 
-  public UserModel(
-    int id_usuario_,
-    String usuario_,
-    String senha_,
-    String email_,
-    String telefone_,
-    java.sql.Date data_nascimento_
-  ) {
-    this._id_usuario = id_usuario_;
-    this._usuario = usuario_;
-    this._senha = senha_;
-    this._email = email_;
-    this._telefone = telefone_;
-    this._data_nascimento = data_nascimento_;
-  }
+    public void setData_nascimento(Date _data_nascimento) {
+        this._data_nascimento = _data_nascimento;
+    }
+
 }
