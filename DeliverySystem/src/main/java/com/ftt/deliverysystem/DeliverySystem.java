@@ -23,6 +23,7 @@ public class DeliverySystem {
       DatabaseConnection databaseConnection = new DatabaseConnection();
       if(databaseConnection.getConnection() != null) {
           //inicia a aplicação
+          //comit do nicula
       }
   }
 }
