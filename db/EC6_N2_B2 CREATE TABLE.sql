@@ -1,3 +1,6 @@
+USE [6BI_N2]
+GO
+
 CREATE TABLE [IMAGEM] (
   [id_imagem] int PRIMARY KEY IDENTITY(1, 1),
   [blob_imagem] varchar(255) NOT NULL,

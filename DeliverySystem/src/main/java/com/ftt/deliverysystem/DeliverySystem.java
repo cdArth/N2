@@ -21,9 +21,8 @@ public class DeliverySystem {
       System.err.println("iniciando a aplicação...");
       
       DatabaseConnection databaseConnection = new DatabaseConnection();
-      if(databaseConnection.getConnection() != null) {
-          //inicia a aplicação
-          //comit do nicula
+      if(databaseConnection.getConnection() == null) {
+          System.err.println("Parece que deu ruim...");
       }
   }
 }
