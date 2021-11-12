@@ -25,6 +25,10 @@ public class UserModel {
         this.data_nascimento = data_nascimento;
     }
 
+    public UserModel() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getId_usuario() {
         return id_usuario;
     }
