@@ -5,45 +5,37 @@
 package com.ftt.deliverysystem.dao;
 
 import com.ftt.deliverysystem.models.UserModel;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  *
  * @author Arthur
  */
 public class LoginDAO {
-    public boolean FazerLogin(UserModel user){
-        boolean logon =false;
-        
+
+    public boolean FazerLogin(UserModel user) {
+        boolean logon = false;
+
         return logon;
-    } 
-    public UserModel ProcurarUser(String userName){
+    }
+
+    public UserModel ProcurarUser(String userName) {
         UserModel user = new UserModel();
-        String sql= "select * from USUARIO where usuario = " + userName;
-        ResultSet resultSet = null;
-
-        try (Connection connection = DatabaseConnection.getConnection(connectionUrl);
-                Statement statement = connection.createStatement();) {
-
-            // Create and execute a SELECT SQL statement.
-            String selectSql = "SELECT TOP 10 Title, FirstName, LastName from SalesLT.Customer";
-            resultSet = statement.executeQuery(selectSql);
-
-            // Print results from select statement
+        String sql = "select * from USUARIO where usuario = " + userName;
+        ResultSet resultSet = DatabaseConnection.query(sql);
+        try {
             while (resultSet.next()) {
                 System.out.println(resultSet.getString(2) + " " + resultSet.getString(3));
             }
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-        
-        
+
         return user;
     }
-    
+
 }
