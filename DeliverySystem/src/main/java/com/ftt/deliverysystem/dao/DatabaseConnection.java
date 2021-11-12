@@ -54,7 +54,7 @@ public class DatabaseConnection {
     
     public static ResultSet query(String queryString) {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(queryString);
+            PreparedStatement preparedStatement = getConnection().prepareStatement(queryString);
             return preparedStatement.executeQuery();
         } catch (SQLException ex) {
             Logger.getLogger(DatabaseConnection.class.getName()).log(Level.SEVERE, null, ex);
