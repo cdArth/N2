@@ -8,7 +8,7 @@ GO
 
 CREATE DATABASE [6BI_N2]
 GO
-    DROP USER [dbuser]
+DROP USER [dbuser]
 GO
 ;
 
@@ -28,12 +28,25 @@ USE [6BI_N2]
 GO
 ;
 
-EXEC sp_addrolemember N'db_datareader',
-N'dbuser'
+GRANT
+SELECT   
+    ON SCHEMA :: [dbo] TO dbuser
 GO
 ;
 
-EXEC sp_addrolemember N'db_datawriter',
-N'dbuser'
+
+GRANT
+INSERT
+    ON SCHEMA :: [dbo] TO dbuser
+GO
+;
+GRANT
+DELETE
+    ON SCHEMA :: [dbo] TO dbuser
+GO
+;
+GRANT
+UPDATE
+    ON SCHEMA :: [dbo] TO dbuser
 GO
 ;
