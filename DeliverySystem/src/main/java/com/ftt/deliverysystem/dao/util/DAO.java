@@ -19,11 +19,12 @@ import java.util.ArrayList;
 
 public abstract class DAO implements IDAO {
 
-    private Connection connection;
+    protected Connection connection;
     protected String tabela;
     private String insertSQL;
     private String updateSQL;
     private String deleteSQL;
+    private String findSQL;
 
     public DAO(String tabela) {
         this.connection = DatabaseConnection.getConnection();
@@ -44,6 +45,9 @@ public abstract class DAO implements IDAO {
 
     protected void setDeleteSQL(String sql) {
         this.deleteSQL = sql;
+    }
+    protected void setFindSQL(String sql) {
+        this.findSQL = sql;
     }
 
     @Override
@@ -108,7 +112,7 @@ public abstract class DAO implements IDAO {
 
     @Override
     public Model find(int id) {
-        String sql = String.format("SELECT * FROM %s WHERE id_usuario = ?", this.tabela);
+        String sql = this.findSQL;
         try (PreparedStatement stmt = this.connection.prepareStatement(sql)) {
             stmt.setInt(1, id);
             stmt.execute();
@@ -133,7 +137,7 @@ public abstract class DAO implements IDAO {
         }
     }
 
-    private Model executeResultSet(PreparedStatement stmt) {
+    protected Model executeResultSet(PreparedStatement stmt) {
         try (ResultSet rs = stmt.getResultSet()) {
             if (rs.next()) {
                 return createModel(rs);
@@ -160,7 +164,7 @@ public abstract class DAO implements IDAO {
         return null;
     }
 
-    private void treatException(Exception ex) {
+    protected void treatException(Exception ex) {
         System.out.println(ex.getMessage());
         ex.printStackTrace();
     }

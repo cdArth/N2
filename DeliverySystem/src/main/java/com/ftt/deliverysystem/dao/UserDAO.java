@@ -24,6 +24,7 @@ public class UserDAO extends DAO {
         super.setInsertSQL(String.format("INSERT INTO %s (senha,email,telefone,data_nascimento) VALUES (?, ?, ?, ?)", this.tabela));
         super.setUpdateSQL(String.format("UPDATE %s SET email = ?, senha = ?, telefone = ?, data_nascimento = ? WHERE id_usuario = ?", this.tabela));
         super.setDeleteSQL(String.format("DELETE FROM %s WHERE id_usuario = ?", this.tabela));
+        super.setFindSQL(String.format("SELECT * FROM %s WHERE id_usuario = ?", this.tabela));
     }
 
     @Override
@@ -81,4 +82,15 @@ public class UserDAO extends DAO {
         super.delete(model);
     }
 
+    public Model find(String email) {
+        String sql = String.format("SELECT * FROM %s WHERE email = ?", this.tabela);
+        try (PreparedStatement stmt = this.connection.prepareStatement(sql)) {
+            stmt.setString(1, email);
+            stmt.execute();
+            return executeResultSet(stmt);
+        } catch (SQLException ex) {
+            this.treatException(ex);
+            return null;
+        }
+    }
 }
