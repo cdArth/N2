@@ -6,7 +6,7 @@
 
 package com.ftt.deliverysystem;
 
-import com.ftt.deliverysystem.dao.DatabaseConnection;
+import com.ftt.deliverysystem.dao.util.DatabaseConnection;
 
 /**
  *

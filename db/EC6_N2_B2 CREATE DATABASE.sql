@@ -7,16 +7,12 @@ GO
 ;
 
 CREATE DATABASE [6BI_N2]
-GO
-    DROP USER [dbuser]
+
 GO
 ;
 
-CREATE USER [dbuser] FOR LOGIN [dbuser] WITH DEFAULT_SCHEMA = [dbo]
-GO
-;
 
-CREATE LOGIN [dbuser] WITH PASSWORD = N 'dbuser@123',
+CREATE LOGIN [dbuser] WITH PASSWORD = 'dbuser@123',
 DEFAULT_DATABASE = [master],
 DEFAULT_LANGUAGE = [us_english],
 CHECK_EXPIRATION = OFF,
@@ -24,16 +20,34 @@ CHECK_POLICY = OFF
 GO
 ;
 
+CREATE USER [dbuser] FOR LOGIN [dbuser] WITH DEFAULT_SCHEMA = [dbo]
+GO
+;
+
+
 USE [6BI_N2]
 GO
 ;
 
-EXEC sp_addrolemember N'db_datareader',
-N'dbuser'
+GRANT
+SELECT   
+    ON SCHEMA :: [dbo] TO dbuser
 GO
 ;
 
-EXEC sp_addrolemember N'db_datawriter',
-N'dbuser'
+
+GRANT
+INSERT
+    ON SCHEMA :: [dbo] TO dbuser
+GO
+;
+GRANT
+DELETE
+    ON SCHEMA :: [dbo] TO dbuser
+GO
+;
+GRANT
+UPDATE
+    ON SCHEMA :: [dbo] TO dbuser
 GO
 ;

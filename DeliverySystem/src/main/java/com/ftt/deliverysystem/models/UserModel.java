@@ -1,48 +1,45 @@
 package com.ftt.deliverysystem.models;
 
+import com.ftt.deliverysystem.models.util.Model;
 import java.sql.Date;
 
 /**
  *
  * @author lukas
  */
-public class UserModel {
+public class UserModel implements Model {
 //USUARIO (id_usuario, usuario, senha, email, telefone, privilegio_administrador)
 
-    private int id_usuario;
-    private String usuario;
+    private int id;
     private String senha;
     private String email;
     private String telefone;
-    private java.sql.Date data_nascimento;
+    private java.sql.Date dataNascimento;
+
+    @Override
+    public int getId() {
+        return id;
+    }
     
-    public UserModel(int id_usuario, String usuario, String senha, String email, String telefone, Date data_nascimento) {
-        this.id_usuario = id_usuario;
-        this.usuario = usuario;
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public UserModel(int id, String senha, String email, String telefone, Date dataNascimento) {
+        this.id = id;
         this.senha = senha;
         this.email = email;
         this.telefone = telefone;
-        this.data_nascimento = data_nascimento;
+        this.dataNascimento = dataNascimento;
     }
 
-    public UserModel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public int getId_usuario() {
-        return id_usuario;
-    }
-
-    public void setId_usuario(int id_usuario) {
-        this.id_usuario = id_usuario;
-    }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public UserModel(String senha, String email, String telefone, Date dataNascimento) {
+        this.id = 0;
+        this.senha = senha;
+        this.email = email;
+        this.telefone = telefone;
+        this.dataNascimento = dataNascimento;
     }
 
     public String getSenha() {
@@ -69,12 +66,12 @@ public class UserModel {
         this.telefone = telefone;
     }
 
-    public Date getData_nascimento() {
-        return data_nascimento;
+    public Date getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setData_nascimento(Date data_nascimento) {
-        this.data_nascimento = data_nascimento;
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
 }

@@ -4,6 +4,7 @@
  */
 package com.ftt.deliverysystem.dao;
 
+import com.ftt.deliverysystem.dao.util.DatabaseConnection;
 import com.ftt.deliverysystem.models.UserModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
