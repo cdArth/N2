@@ -82,12 +82,12 @@ public class UserDAO extends DAO {
         super.delete(model);
     }
 
-    public Model find(String email) {
+    public UserModel find(String email) {
         String sql = String.format("SELECT * FROM %s WHERE email = ?", this.tabela);
         try (PreparedStatement stmt = this.connection.prepareStatement(sql)) {
             stmt.setString(1, email);
             stmt.execute();
-            return executeResultSet(stmt);
+            return (UserModel)(executeResultSet(stmt));
         } catch (SQLException ex) {
             this.treatException(ex);
             return null;
