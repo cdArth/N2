@@ -73,5 +73,4 @@ public class UserModel implements Model {
     public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-
 }
