@@ -37,6 +37,7 @@ public class DatabaseConnection {
 
         try  {
             Connection connection = DriverManager.getConnection(connectionUrl);
+            System.err.println("hora da consulta"); 
             return connection;
         } // Handle any errors that may have occurred.
         catch (Exception e) {

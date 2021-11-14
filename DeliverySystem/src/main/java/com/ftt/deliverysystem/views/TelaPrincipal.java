@@ -147,6 +147,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         Sobre sobre = new Sobre();
         sobre.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
