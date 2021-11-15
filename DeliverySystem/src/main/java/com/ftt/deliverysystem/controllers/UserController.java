@@ -8,7 +8,11 @@ package com.ftt.deliverysystem.controllers;
 import com.ftt.deliverysystem.dao.EnderecoDAO;
 import com.ftt.deliverysystem.dao.LoginDAO;
 import com.ftt.deliverysystem.dao.UserDAO;
+import com.ftt.deliverysystem.dao.util.HelperDAO;
+import com.ftt.deliverysystem.models.ClienteModel;
+import com.ftt.deliverysystem.models.EnderecoModel;
 import com.ftt.deliverysystem.models.UserModel;
+import java.util.ArrayList;
 
 /**
  *
@@ -28,13 +32,32 @@ public class UserController {
         logon = user1 == null;
         return logon;
     }
-    public void Insert(UserModel model){
-    UserDAO dao = new UserDAO();
-    EnderecoDAO dao1 = new EnderecoDAO();
-    
-    if(dao.find(model.getEmail())==null){
-        
-    }
+
+    public void Insert(UserModel user, EnderecoModel adress, ClienteModel cliente) {
+        HelperDAO hdao = new HelperDAO();
+        UserDAO dao = new UserDAO();
+        if (hdao.check(user, adress, cliente)) {
+            dao.insert(user);
+        }
     }
 
+    public void Update(UserModel user) {
+
+        UserDAO dao = new UserDAO();
+        user.setId(dao.find(user.getEmail()).getId());
+        dao.update(user);
+    }
+
+    public void Delete(UserModel user) {
+        UserDAO dao = new UserDAO();
+        dao.delete(user);
+
+    }
+
+    public ArrayList<UserModel> Listar() {
+        UserDAO dao = new UserDAO();
+        ArrayList<UserModel> lista = dao.findAll();
+        return lista;
+
+    }
 }

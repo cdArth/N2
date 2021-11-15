@@ -35,7 +35,7 @@ public class EnderecoDAO extends DAO {
         stmt.setString(index++, model.getCidade());
         stmt.setString(index++, model.getEndereco());
         stmt.setString(index++, model.getUf());
-        stmt.setInt(index++, model.getId());
+        stmt.setInt(index++, model.getUsuario());
 
         if (model.getId_endereco() != 0) {
             stmt.setInt(index++, model.getId_endereco());

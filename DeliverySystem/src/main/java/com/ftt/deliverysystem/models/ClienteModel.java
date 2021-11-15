@@ -1,16 +1,35 @@
 package com.ftt.deliverysystem.models;
 
-public class ClienteModel {
+import com.ftt.deliverysystem.models.util.Model;
+
+public class ClienteModel implements Model {
 
     private int id_cliente;
-    private UserModel usuario;
+    private int usuario;
     private String nome;
     private String cpf;
-    private EnderecoModel endereco;
+    private int endereco;
     private boolean passe_vip;
 
-    public ClienteModel(int id_cliente, UserModel usuario, String nome, String cpf, EnderecoModel endereco, boolean passe_vip) {
+    @Override
+    public int getId() {
+        return id_cliente;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id_cliente = id;
+    }
+    public ClienteModel(int id_cliente, int usuario, String nome, String cpf, int endereco, boolean passe_vip) {
         this.id_cliente = id_cliente;
+        this.usuario = usuario;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.endereco = endereco;
+        this.passe_vip = passe_vip;
+    }
+    public ClienteModel(int usuario, String nome, String cpf, int endereco, boolean passe_vip) {
+        this.id_cliente = 0;
         this.usuario = usuario;
         this.nome = nome;
         this.cpf = cpf;
@@ -26,11 +45,11 @@ public class ClienteModel {
         this.id_cliente = id_cliente;
     }
 
-    public UserModel getUsuario() {
+    public int getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(UserModel usuario) {
+    public void setUsuario(int usuario) {
         this.usuario = usuario;
     }
 
@@ -50,11 +69,11 @@ public class ClienteModel {
         this.cpf = cpf;
     }
 
-    public EnderecoModel getEndereco() {
+    public int getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(EnderecoModel endereco) {
+    public void setEndereco(int endereco) {
         this.endereco = endereco;
     }
 
