@@ -5,17 +5,21 @@
  */
 package com.ftt.deliverysystem.views;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Victor Kato
  */
 public class Sobre extends javax.swing.JFrame {
-
+    JFrame ultimaTela;
+    
     /**
      * Creates new form Sobre
      */
-    public Sobre() {
+    public Sobre(JFrame ultimaTela) {
         initComponents();
+        this.ultimaTela = ultimaTela;
     }
 
     /**
@@ -96,9 +100,8 @@ public class Sobre extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
 //        TelaPrincipal telaPrincipal = new TelaPrincipal();;
-//        telaPrincipal.setVisible(true);
-
         this.setVisible(false);
+        ultimaTela.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

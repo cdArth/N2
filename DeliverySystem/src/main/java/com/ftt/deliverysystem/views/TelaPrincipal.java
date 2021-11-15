@@ -5,6 +5,12 @@
  */
 package com.ftt.deliverysystem.views;
 
+import com.ftt.deliverysystem.dao.ProdutoDAO;
+import com.ftt.deliverysystem.models.ProdutoModel;
+import java.awt.BorderLayout;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author Victor Kato
@@ -16,6 +22,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+        DefaultListModel<produto> list = new DefaultListModel<produto>() {
+        };
+        ProdutoDAO dao = new ProdutoDAO();
+        ArrayList<ProdutoModel> all = dao.findAll();
+        for (int i = 0; i < all.size(); i++) {
+            ProdutoModel pm = all.get(i);
+            produto p = new produto();
+            p.jLabel1.setText(pm.getDescricao());
+            list.add(i, p);
+            PaineMVendidos.geadd(p, BorderLayout.CENTER);
+        }
     }
 
     /**
@@ -60,11 +77,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         PaineMVendidos.setLayout(PaineMVendidosLayout);
         PaineMVendidosLayout.setHorizontalGroup(
             PaineMVendidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 542, Short.MAX_VALUE)
         );
         PaineMVendidosLayout.setVerticalGroup(
             PaineMVendidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 111, Short.MAX_VALUE)
+            .addGap(0, 130, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout PainelHallLayout = new javax.swing.GroupLayout(PainelHall);
@@ -139,18 +156,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(PainelHall, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSobreActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void btnSobreActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        Sobre sobre = new Sobre();
+        Sobre sobre = new Sobre(this);
         sobre.setVisible(true);
         this.setVisible(false);
-    }                                        
+    }
 
     /**
      * @param args the command line arguments
