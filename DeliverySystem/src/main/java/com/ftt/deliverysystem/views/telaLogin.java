@@ -1,3 +1,5 @@
+package com.ftt.deliverysystem.views;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -56,6 +58,9 @@ public class telaLogin extends javax.swing.JFrame {
         jLabel4.setText("Ainda não possui Login?");
 
         btnCadastroLogin.setText("Cadastrar-se");
+        btnCadastroLogin.setBorderPainted(false);
+        btnCadastroLogin.setContentAreaFilled(false);
+        btnCadastroLogin.setFocusPainted(false);
         btnCadastroLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastroLoginActionPerformed(evt);
@@ -125,7 +130,7 @@ public class telaLogin extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -139,6 +144,9 @@ public class telaLogin extends javax.swing.JFrame {
 
     private void btnCadastroLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroLoginActionPerformed
         // TODO add your handling code here:
+         telaCadastro cadastro = new telaCadastro();
+        cadastro.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnCadastroLoginActionPerformed
 
     /**

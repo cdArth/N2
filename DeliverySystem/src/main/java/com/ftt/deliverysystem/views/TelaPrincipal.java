@@ -11,6 +11,7 @@ import java.awt.BorderLayout;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 
+
 /**
  *
  * @author Victor Kato
@@ -22,7 +23,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
-        DefaultListModel<produto> list = new DefaultListModel<produto>() {
+       DefaultListModel<produto> list = new DefaultListModel<produto>() {
         };
         ProdutoDAO dao = new ProdutoDAO();
         ArrayList<ProdutoModel> all = dao.findAll();
@@ -56,8 +57,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btnPesquisa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 153, 0));
+        setForeground(java.awt.Color.orange);
 
         btnLogin.setText("Entrar");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         txtPesquisa.setText("Pesquise");
 
@@ -65,6 +73,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel1.setText("Katchaça");
 
         btnProdutos.setText("Produtos");
+        btnProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProdutosActionPerformed(evt);
+            }
+        });
 
         btnSobre.setText("Sobre");
         btnSobre.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +113,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel3.setText("Mais vendidos");
 
         btnPesquisa.setText("Pesquisar");
+        btnPesquisa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,7 +151,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                 .addComponent(btnPesquisa)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnLogin)))
-                        .addContainerGap(89, Short.MAX_VALUE))))
+                        .addContainerGap(104, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,6 +179,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPesquisaActionPerformed
+
+    private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
+        // TODO add your handling code here:
+        telaProduto produto = new telaProduto();
+        produto.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnProdutosActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+         telaLogin login = new telaLogin();
+        login.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnSobreActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
