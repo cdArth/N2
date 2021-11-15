@@ -7,6 +7,7 @@
 package com.ftt.deliverysystem;
 
 import com.ftt.deliverysystem.dao.util.DatabaseConnection;
+import com.ftt.deliverysystem.views.TelaPrincipal;
 
 /**
  *
@@ -24,5 +25,10 @@ public class DeliverySystem {
       if(databaseConnection.getConnection() == null) {
           System.err.println("Parece que deu ruim...");
       }
+      
+      TelaPrincipal telaPrincipal = new TelaPrincipal();
+      
+      telaPrincipal.setVisible(true);
+              
   }
 }

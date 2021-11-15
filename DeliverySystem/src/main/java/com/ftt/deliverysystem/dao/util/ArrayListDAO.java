@@ -26,7 +26,9 @@ public abstract class ArrayListDAO extends DAO {
 
     @SuppressWarnings("unchecked")
     protected void loadModels() throws NullPointerException {
-        this.models = super.findAll();
+        if (models == null || models.size() == 0) {
+            this.models = super.findAll();
+        }
     }
 
     @SuppressWarnings("rawtypes")

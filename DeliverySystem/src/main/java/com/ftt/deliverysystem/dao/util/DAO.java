@@ -46,6 +46,7 @@ public abstract class DAO implements IDAO {
     protected void setDeleteSQL(String sql) {
         this.deleteSQL = sql;
     }
+
     protected void setFindSQL(String sql) {
         this.findSQL = sql;
     }
