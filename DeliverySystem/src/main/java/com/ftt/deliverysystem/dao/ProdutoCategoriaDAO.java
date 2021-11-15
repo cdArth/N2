@@ -11,6 +11,7 @@ import com.ftt.deliverysystem.models.util.Model;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -50,5 +51,44 @@ public class ProdutoCategoriaDAO extends ArrayListDAO {
         );
         return m;
     }
+    
+    @SuppressWarnings("unchecked")
+    @Override
+    public ArrayList<ProdutoCategoriaModel> findAll() {
+        return (ArrayList<ProdutoCategoriaModel>) super.findAll();
+    }
+
+    @Override
+    public ProdutoCategoriaModel find(int id) {
+        return (ProdutoCategoriaModel) (super.find(id));
+    }
+
+    public void insert(ProdutoCategoriaModel model) {
+        super.insert(model);
+    }
+
+    public void update(ProdutoCategoriaModel model) {
+        super.update(model);
+    }
+
+    public void delete(ProdutoCategoriaModel model) {
+        super.delete(model);
+    }
+
+    
+    public ProdutoCategoriaModel find(String nome){
+        String sql = String.format("SELECT * FROM %s WHERE nome = ?", this.tabela);
+        try (PreparedStatement stmt = this.connection.prepareStatement(sql)) {
+            stmt.setString(1, nome);
+            stmt.execute();
+            return (ProdutoCategoriaModel) (executeResultSet(stmt));
+        } catch (SQLException ex) {
+            this.treatException(ex);
+            return null;
+        }
+    }
+
+
+
 
 }

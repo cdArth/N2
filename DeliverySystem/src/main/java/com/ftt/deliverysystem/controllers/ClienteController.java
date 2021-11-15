@@ -4,6 +4,7 @@
  */
 package com.ftt.deliverysystem.controllers;
 
+import com.ftt.deliverysystem.dao.ClienteDAO;
 import com.ftt.deliverysystem.dao.EnderecoDAO;
 import com.ftt.deliverysystem.dao.util.HelperDAO;
 import com.ftt.deliverysystem.models.ClienteModel;
@@ -38,7 +39,7 @@ public class ClienteController {
     }
 
     public ArrayList<ClienteModel> Listar() {
-        EnderecoDAO dao = new EnderecoDAO();
+        ClienteDAO dao = new ClienteDAO();
         ArrayList<ClienteModel> lista = dao.findAll();
         return lista;
 

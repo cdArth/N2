@@ -4,6 +4,8 @@
  */
 package com.ftt.deliverysystem.dao.util;
 
+
+        
 import com.ftt.deliverysystem.models.ClienteModel;
 import com.ftt.deliverysystem.models.EnderecoModel;
 import com.ftt.deliverysystem.models.UserModel;
@@ -17,9 +19,9 @@ import com.ftt.deliverysystem.dao.ClienteDAO;
 public class HelperDAO {
     public boolean check(UserModel user,EnderecoModel adress, ClienteModel cliente){
         boolean check=false;
-        UserDAO daoUser = UserDAO();
-        EnderecoDAO daoEndereco = EnderecoDAO();
-        ClienteDAO daoCliente = ClienteDAO();
+        UserDAO daoUser = new UserDAO();
+        EnderecoDAO daoEndereco = new EnderecoDAO();
+        ClienteDAO daoCliente = new ClienteDAO();
         if(daoUser.find(user.getEmail())==null && daoEndereco.find(adress.getEndereco())==null 
                 && daoCliente.find(cliente.getCpf())==null){
             check=true;

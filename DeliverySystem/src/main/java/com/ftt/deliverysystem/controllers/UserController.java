@@ -6,7 +6,6 @@
 package com.ftt.deliverysystem.controllers;
 
 import com.ftt.deliverysystem.dao.EnderecoDAO;
-import com.ftt.deliverysystem.dao.LoginDAO;
 import com.ftt.deliverysystem.dao.UserDAO;
 import com.ftt.deliverysystem.dao.util.HelperDAO;
 import com.ftt.deliverysystem.models.ClienteModel;
