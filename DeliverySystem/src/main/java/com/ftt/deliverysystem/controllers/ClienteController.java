@@ -17,10 +17,10 @@ import java.util.ArrayList;
  * @author Arthur
  */
 public class ClienteController {
-        public void Insert(UserModel user, EnderecoModel adress, ClienteModel cliente) {
+        public void Insert(UserModel user, ClienteModel cliente) {
         HelperDAO hdao = new HelperDAO();
         EnderecoDAO dao = new EnderecoDAO();
-        if (hdao.check(user, adress, cliente)) {
+        if (hdao.checkUC(user, cliente)) {
             dao.insert(cliente);
         }
     }

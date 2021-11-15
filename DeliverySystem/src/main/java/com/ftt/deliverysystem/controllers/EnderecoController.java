@@ -21,7 +21,7 @@ public class EnderecoController{
     public void Insert(UserModel user, EnderecoModel adress, ClienteModel cliente) {
         HelperDAO hdao = new HelperDAO();
         EnderecoDAO dao = new EnderecoDAO();
-        if (hdao.check(user, adress, cliente)) {
+        if (hdao.checkUC(user, cliente)) {
             dao.insert(adress);
         }
     }

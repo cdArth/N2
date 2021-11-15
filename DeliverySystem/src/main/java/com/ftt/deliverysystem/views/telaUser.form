@@ -25,18 +25,26 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="190" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="btnProdutoUser" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" pref="143" max="-2" attributes="0"/>
+              <EmptySpace pref="163" max="32767" attributes="0"/>
+              <Component id="btnCarrinhoUser" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="24" max="32767" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="38" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel1" alignment="3" pref="39" max="32767" attributes="0"/>
+                  <Component id="btnCarrinhoUser" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnProdutoUser" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -58,7 +66,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="390" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="419" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -68,8 +76,24 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Carrinho de compras:"/>
+        <Property name="text" type="java.lang.String" value="User Home:"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnCarrinhoUser">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Carrinho"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCarrinhoUserActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnProdutoUser">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Produtos"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProdutoUserActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

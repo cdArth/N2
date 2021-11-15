@@ -35,7 +35,7 @@ public class UserController {
     public void Insert(UserModel user, EnderecoModel adress, ClienteModel cliente) {
         HelperDAO hdao = new HelperDAO();
         UserDAO dao = new UserDAO();
-        if (hdao.check(user, adress, cliente)) {
+        if (hdao.checkUC(user, cliente)) {
             dao.insert(user);
         }
     }
