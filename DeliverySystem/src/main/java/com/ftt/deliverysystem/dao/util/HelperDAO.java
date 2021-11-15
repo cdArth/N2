@@ -4,10 +4,14 @@
  */
 package com.ftt.deliverysystem.dao.util;
 
+
+        
 import com.ftt.deliverysystem.models.ClienteModel;
 import com.ftt.deliverysystem.models.EnderecoModel;
 import com.ftt.deliverysystem.models.UserModel;
-
+import com.ftt.deliverysystem.dao.EnderecoDAO;
+import com.ftt.deliverysystem.dao.UserDAO;
+import com.ftt.deliverysystem.dao.ClienteDAO;
 /**
  *
  * @author Arthur
@@ -15,7 +19,13 @@ import com.ftt.deliverysystem.models.UserModel;
 public class HelperDAO {
     public boolean check(UserModel user,EnderecoModel adress, ClienteModel cliente){
         boolean check=false;
-        if()
+        UserDAO daoUser = new UserDAO();
+        EnderecoDAO daoEndereco = new EnderecoDAO();
+        ClienteDAO daoCliente = new ClienteDAO();
+        if(daoUser.find(user.getEmail())==null && daoEndereco.find(adress.getEndereco())==null 
+                && daoCliente.find(cliente.getCpf())==null){
+            check=true;
+        }
     return check;
     }
 }
