@@ -100,7 +100,7 @@ public class telaUser extends javax.swing.JFrame {
 
     private void btnCarrinhoUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarrinhoUserActionPerformed
         // TODO add your handling code here:
-         tela Carrinho carrinho = new telaCarrinho();
+         telaCarrinho carrinho = new telaCarrinho(this);
         carrinho.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCarrinhoUserActionPerformed
