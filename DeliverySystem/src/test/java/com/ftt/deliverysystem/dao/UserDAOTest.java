@@ -93,9 +93,9 @@ public class UserDAOTest {
     @Test
     public void testDelete() {
         System.out.println("delete");
-        int id = 4;
-        UserDAO instance = new UserDAO();
-        UserModel user = instance.find(id);
-        instance.delete(user);
+//        int id = 4;
+//        UserDAO instance = new UserDAO();
+//        UserModel user = instance.find(id);
+//        instance.delete(user);
     }
 }

@@ -1,21 +1,26 @@
 package com.ftt.deliverysystem.views;
 
+import javax.swing.JFrame;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author Nicolas
  */
 public class telaLogin extends javax.swing.JFrame {
 
+    JFrame ultimaTela;
+
     /**
      * Creates new form telaLogin
      */
-    public telaLogin() {
+    public telaLogin(JFrame ultimaTela) {
         initComponents();
+
+        this.ultimaTela = ultimaTela;
     }
 
     /**
@@ -36,6 +41,7 @@ public class telaLogin extends javax.swing.JFrame {
         btnLogin = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         btnCadastroLogin = new javax.swing.JButton();
+        btnVolta = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,6 +74,16 @@ public class telaLogin extends javax.swing.JFrame {
             }
         });
 
+        btnVolta.setBackground(new java.awt.Color(255, 255, 255));
+        btnVolta.setText("Voltar");
+        btnVolta.setBorderPainted(false);
+        btnVolta.setContentAreaFilled(false);
+        btnVolta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -94,11 +110,17 @@ public class telaLogin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(85, 85, 85))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnVolta)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(btnVolta)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -146,10 +168,16 @@ public class telaLogin extends javax.swing.JFrame {
 
     private void btnCadastroLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroLoginActionPerformed
         // TODO add your handling code here:
-         telaCadastro cadastro = new telaCadastro();
+        telaCadastro cadastro = new telaCadastro();
         cadastro.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCadastroLoginActionPerformed
+
+    private void btnVoltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltaActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        ultimaTela.setVisible(true);
+    }//GEN-LAST:event_btnVoltaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,7 +209,7 @@ public class telaLogin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new telaLogin().setVisible(true);
+                new telaLogin(null).setVisible(true);
             }
         });
     }
@@ -189,6 +217,7 @@ public class telaLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastroLogin;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnVolta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

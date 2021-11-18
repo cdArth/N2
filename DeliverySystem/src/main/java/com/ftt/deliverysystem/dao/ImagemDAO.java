@@ -52,9 +52,9 @@ public class ImagemDAO extends DAO {
     }
 
     public Model findPorProduto(int id) {
-        String sql = "SELECT * FROM IMAGEM I "
-                + "JOIN PRODUTO_IMAGEM PI ON I.id_imagem = PI.id_imagem"
-                + "WHERE PI.id_produto = ?";
+        String sql = "SELECT * FROM IMAGEM "
+                + "JOIN PRODUTO_IMAGEM ON IMAGEM.id_imagem = PRODUTO_IMAGEM.id_imagem "
+                + "WHERE PRODUTO_IMAGEM.id_produto = ?";
         try (PreparedStatement stmt = this.connection.prepareStatement(sql)) {
             stmt.setInt(1, id);
             stmt.execute();

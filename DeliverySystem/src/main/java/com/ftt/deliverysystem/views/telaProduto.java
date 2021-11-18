@@ -4,9 +4,6 @@ package com.ftt.deliverysystem.views;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-import com.ftt.deliverysystem.dao.ProdutoDAO;
-import com.ftt.deliverysystem.models.ProdutoModel;
-import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
@@ -24,20 +21,20 @@ public class telaProduto extends javax.swing.JFrame {
         initComponents();
         this.ultimaTela = ultimaTela;
 
-        System.err.println("asd");
-        ProdutoDAO dao = new ProdutoDAO();
-        System.err.println("asd");
-        ArrayList<ProdutoModel> list = dao.findAll();
-        System.err.println("asd");
-
-        for (ProdutoModel produtoModel : list) {
-            produto p = new produto(produtoModel.getNome(), produtoModel.getDescricao());
-            panelCerveja.add(new produto(produtoModel.getNome(), produtoModel.getDescricao()));
-            System.err.println(produtoModel.getImagem().getBaseimagem());
-            System.err.println(p.jLabel1.getText());
-        }
-
-        panelCerveja.updateUI();
+//        System.err.println("asd");
+//        ProdutoDAO dao = new ProdutoDAO();
+//        System.err.println("asd");
+//        ArrayList<ProdutoModel> list = dao.findAll();
+//        System.err.println("asd");
+//
+//        for (ProdutoModel produtoModel : list) {
+//            produto p = new produto(produtoModel.getNome(), produtoModel.getDescricao());
+//            panelCerveja.add(new produto(produtoModel.getNome(), produtoModel.getDescricao()));
+//            System.err.println(produtoModel.getImagem().getBaseimagem());
+//            System.err.println(p.jLabel1.getText());
+//        }
+//
+//        panelCerveja.updateUI();
 
     }
 
