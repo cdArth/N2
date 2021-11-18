@@ -59,7 +59,7 @@ public class telaCadastro extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Cadastro de Usuário");
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 153, 51));
 
         jLabel2.setText("Nome:");
 
