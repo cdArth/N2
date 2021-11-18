@@ -14,8 +14,13 @@ public class produto extends javax.swing.JPanel {
     /**
      * Creates new form produto
      */
-    public produto() {
+    public produto(String primeiro, String segundo) {
         initComponents();
+        
+        jLabel1.setText(primeiro);
+        jLabel2.setText(segundo);
+        
+        updateUI();
     }
 
     /**
