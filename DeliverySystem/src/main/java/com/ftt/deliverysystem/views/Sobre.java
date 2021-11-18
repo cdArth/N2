@@ -12,10 +12,13 @@ import javax.swing.JFrame;
  * @author Victor Kato
  */
 public class Sobre extends javax.swing.JFrame {
+
     JFrame ultimaTela;
-    
+
     /**
      * Creates new form Sobre
+     *
+     * @param ultimaTela
      */
     public Sobre(JFrame ultimaTela) {
         initComponents();
@@ -71,15 +74,15 @@ public class Sobre extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Victor Bueno Kato - RA 081190045");
 
-        lbArthur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ftt/deliverysystem/views/imgTrab/Arthur.png"))); // NOI18N
+        lbArthur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Arthur.png"))); // NOI18N
 
-        lbLukas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ftt/deliverysystem/views/imgTrab/Lukas.png"))); // NOI18N
+        lbLukas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Lukas.png"))); // NOI18N
 
-        lbBritu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ftt/deliverysystem/views/imgTrab/Britu.png"))); // NOI18N
+        lbBritu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Britu.png"))); // NOI18N
 
-        lbNicolas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ftt/deliverysystem/views/imgTrab/eu3.png"))); // NOI18N
+        lbNicolas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/eu3.png"))); // NOI18N
 
-        lbKato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ftt/deliverysystem/views/imgTrab/Kato.png"))); // NOI18N
+        lbKato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Kato.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -102,7 +105,7 @@ public class Sobre extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbArthur)
                             .addComponent(lbBritu))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lbNicolas)
@@ -111,8 +114,7 @@ public class Sobre extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lbLukas)
                                 .addGap(150, 150, 150)
-                                .addComponent(lbKato)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(lbKato)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -169,9 +171,9 @@ public class Sobre extends javax.swing.JFrame {
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         // TODO add your handling code here:
-//        TelaPrincipal telaPrincipal = new TelaPrincipal();;
         this.setVisible(false);
-        ultimaTela.setVisible(true);
+        if (ultimaTela != null)
+            ultimaTela.setVisible(true);
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     /**
@@ -203,6 +205,7 @@ public class Sobre extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Sobre(null).setVisible(true);
             }

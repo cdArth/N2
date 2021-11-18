@@ -188,13 +188,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPesquisaActionPerformed
 
-    private void btnSobreActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here://
-        Sobre sobre = new Sobre(null);
+    private void btnSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreActionPerformed
+        // TODO add your handling code here:
+        Sobre sobre = new Sobre(this);
         sobre.setVisible(true);
         this.setVisible(false);
-    }
-
+    }//GEN-LAST:event_btnSobreActionPerformed
     /**
      * @param args the command line arguments
      */

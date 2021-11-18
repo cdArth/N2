@@ -84,7 +84,7 @@
                               <Component id="lbArthur" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lbBritu" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="150" max="32767" attributes="0"/>
+                          <EmptySpace pref="138" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="lbNicolas" min="-2" max="-2" attributes="0"/>
@@ -95,7 +95,6 @@
                                   <Component id="lbLukas" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
                                   <Component id="lbKato" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="12" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -180,35 +179,35 @@
         <Component class="javax.swing.JLabel" name="lbArthur">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/ftt/deliverysystem/views/imgTrab/Arthur.png"/>
+              <Image iconType="3" name="/Images/Arthur.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbLukas">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/ftt/deliverysystem/views/imgTrab/Lukas.png"/>
+              <Image iconType="3" name="/Images/Lukas.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbBritu">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/ftt/deliverysystem/views/imgTrab/Britu.png"/>
+              <Image iconType="3" name="/Images/Britu.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbNicolas">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/ftt/deliverysystem/views/imgTrab/eu3.png"/>
+              <Image iconType="3" name="/Images/eu3.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbKato">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/ftt/deliverysystem/views/imgTrab/Kato.png"/>
+              <Image iconType="3" name="/Images/Kato.png"/>
             </Property>
           </Properties>
         </Component>
