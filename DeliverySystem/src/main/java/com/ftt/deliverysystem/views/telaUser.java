@@ -49,6 +49,7 @@ public class telaUser extends javax.swing.JFrame {
         jLabel1.setText("User Home:");
 
         btnCarrinhoUser.setText("Carrinho");
+        btnCarrinhoUser.setContentAreaFilled(false);
         btnCarrinhoUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCarrinhoUserActionPerformed(evt);
@@ -56,6 +57,7 @@ public class telaUser extends javax.swing.JFrame {
         });
 
         btnProdutoUser.setText("Produtos");
+        btnProdutoUser.setContentAreaFilled(false);
         btnProdutoUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProdutoUserActionPerformed(evt);
@@ -100,7 +102,7 @@ public class telaUser extends javax.swing.JFrame {
 
     private void btnCarrinhoUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarrinhoUserActionPerformed
         // TODO add your handling code here:
-         tela Carrinho carrinho = new telaCarrinho();
+         telaCarrinho carrinho = new telaCarrinho(this);
         carrinho.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCarrinhoUserActionPerformed
