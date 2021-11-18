@@ -148,14 +148,14 @@ public class TelaProdutoUnit extends javax.swing.JPanel {
 
     private void btnSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreActionPerformed
         // TODO add your handling code here:
-        Sobre sobre = new Sobre(this);
+        Sobre sobre = new Sobre(null);
     sobre.setVisible(true);
     this.setVisible(false);
     }//GEN-LAST:event_btnSobreActionPerformed
 
     private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
         // TODO add your handling code here:
-        telaProduto produto = new telaProduto(this);
+        telaProduto produto = new telaProduto(null);
     produto.setVisible(true);
     this.setVisible(false);
     }//GEN-LAST:event_btnProdutosActionPerformed

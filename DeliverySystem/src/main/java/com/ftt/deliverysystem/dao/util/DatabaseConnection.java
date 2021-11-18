@@ -30,7 +30,7 @@ public class DatabaseConnection {
 
     private static Connection createConnection() {
         String connectionUrl
-                = "jdbc:sqlserver://localhost\\SQLEXPRESS;"
+                = "jdbc:sqlserver://localhost:1433;instanceName=sql1;"
                 + "database=6BI_N2;"
                 + "user=dbuser;"
                 + "password=dbuser@123;";

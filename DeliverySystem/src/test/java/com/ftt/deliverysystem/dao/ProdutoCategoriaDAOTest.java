@@ -6,7 +6,6 @@
 package com.ftt.deliverysystem.dao;
 
 import com.ftt.deliverysystem.models.ProdutoCategoriaModel;
-import com.ftt.deliverysystem.models.util.Model;
 import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
@@ -39,8 +38,8 @@ public class ProdutoCategoriaDAOTest {
 
         ProdutoCategoriaModel pcm = new ProdutoCategoriaModel("TESTE");
 
-        Model result = instance.insert(pcm);
-        System.err.println(result.getId());
+        instance.insert(pcm);
+        
     }
 
 }

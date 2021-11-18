@@ -17,6 +17,15 @@ public class ProdutoModel implements Model{
     public String nome;
     public String descricao;
     public ProdutoCategoriaModel categoria;
+    public ImagemModel imagem;
+
+    public ImagemModel getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(ImagemModel imagem) {
+        this.imagem = imagem;
+    }
 
     public ProdutoModel(int id, String nome, String descricao, ProdutoCategoriaModel categoria) {
         this.id = id;
