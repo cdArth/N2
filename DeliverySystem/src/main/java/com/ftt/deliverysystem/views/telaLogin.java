@@ -167,7 +167,7 @@ public class telaLogin extends javax.swing.JFrame {
 
     private void btnCadastroLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroLoginActionPerformed
         // TODO add your handling code here:
-        telaCadastro cadastro = new telaCadastro();
+        telaCadastro cadastro = new telaCadastro(this);
         cadastro.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCadastroLoginActionPerformed
