@@ -8,4 +8,4 @@ Link do Figma:
 https://www.figma.com/file/gPe1bX7cIvv24dl6D2Lq4F/Trabalho-FTT?node-id=57%3A24
  
 Link do PPT:
-https://cefsaedu-my.sharepoint.com/:p:/g/personal/081190030_ftt_cefsa_edu_br/Eb3nfV60fJ1CmgzTogI2qnsBIl32ms88m7Gjry6TpBf4NA?e=ZDN9ZR
+https://cefsaedu-my.sharepoint.com/:p:/g/personal/081190022_ftt_cefsa_edu_br/EZEm59GcQuxGuruBrm0vIFwBR2xmro8GbWNxIWjfJSoz-Q?rtime=rBvC0t-q2Ug
