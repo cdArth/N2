@@ -4,6 +4,9 @@
  */
 package com.ftt.deliverysystem.views;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
 /**
  *
  * @author Nicolas
@@ -289,7 +292,7 @@ public class telaCadastro extends javax.swing.JFrame {
 
     private void txtNameCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameCadastroActionPerformed
         // Jtext do nome;
-        
+
     }//GEN-LAST:event_txtNameCadastroActionPerformed
 
     private void txtEmailCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailCadastroActionPerformed
@@ -326,32 +329,39 @@ public class telaCadastro extends javax.swing.JFrame {
 
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
         // Cadastro:
-        
-        private Data nascimento;
-        private String nome, email,cpf, telefone, rua, bairro, cep, uf, senha, confirmaSenha;
-        
-        
-                
-                
-        try{
-            txtNameCadastro.getText().trim() = nome;
-            txtEmailCadastro.getText().trim() = email;
-            txtCPFCadastro.getText().trim() = cpf;
-            txtTelefoneCadastro.getText().trim() = telefone;
-            txtRuaCadastro.getText().trim() = rua;
-            txtBairroCadastro.getText().trim() = bairro;
-            txtCEPCadastro.getText().trim() = cep;
-            txtUFCadastro.getText().trim() = uf;
-            txtSenhaCadastro.getText().trim() = senha;
-            txtConfirmaSenha.getText().trim() = confirmaSenha;
-            
+
+        Date nascimento = null;
+        String nome = null, email = null, cpf = null, telefone, rua, bairro, cep, uf, senha, confirmaSenha;
+
+        try {
+            nome = txtNameCadastro.getText().trim();
+            email = txtEmailCadastro.getText().trim();
+            cpf = txtCPFCadastro.getText().trim();
+            telefone = txtTelefoneCadastro.getText().trim();
+            rua = txtRuaCadastro.getText().trim();
+            bairro = txtBairroCadastro.getText().trim();
+            cep = txtCEPCadastro.getText().trim();
+            uf = txtUFCadastro.getText().trim();
+            senha = txtSenhaCadastro.getText().trim();
+            confirmaSenha = txtCornfirmaSenha.getText().trim();
+
             SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-            Date nascimento = formato.parse(txtBirthCaastro.getText().trim());
+//            Date nascimento = (Date) formato.parse(txtBirthCadastro.getText().trim());
+        } catch (Exception e) {
         }
-        
-        if(nome.isEmpty()){MessageBox.Show("Preencha o nome");}
-        if(email.isEmpty()){MessageBox.Show("E-mail inválido");}
-        if(cpf.isEmpty() || cpf.length() != 14){MessageBox.Show("CPF inválido");}        
+
+//        if (nome.isEmpty()) {;
+//            MessageBox.Show("Preencha o nome");
+//        }
+//
+//        if (email.isEmpty()) {
+//            MessageBox.Show("E-mail inválido");
+//        }
+//
+//        if (cpf.isEmpty()
+//                || cpf.length() != 14) {
+//            MessageBox.Show("CPF inválido");
+//        }
     }//GEN-LAST:event_btnCadastroActionPerformed
 
     private void txtBirthCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBirthCadastroActionPerformed
@@ -375,13 +385,17 @@ public class telaCadastro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(telaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(telaCadastro.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(telaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(telaCadastro.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(telaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(telaCadastro.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(telaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(telaCadastro.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>

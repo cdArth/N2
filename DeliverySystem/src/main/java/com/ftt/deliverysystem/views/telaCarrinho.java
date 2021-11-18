@@ -387,7 +387,7 @@ JFrame ultimaTela;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new telaCarrinho().setVisible(true);
+                new telaCarrinho(null).setVisible(true);
             }
         });
     }
