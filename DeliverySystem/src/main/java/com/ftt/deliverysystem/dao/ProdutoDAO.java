@@ -6,6 +6,7 @@
 package com.ftt.deliverysystem.dao;
 
 import com.ftt.deliverysystem.dao.util.DAO;
+import com.ftt.deliverysystem.models.ImagemModel;
 import com.ftt.deliverysystem.models.ProdutoCategoriaModel;
 import com.ftt.deliverysystem.models.ProdutoModel;
 import com.ftt.deliverysystem.models.util.Model;
@@ -43,12 +44,15 @@ public class ProdutoDAO extends DAO {
     @Override
     protected Model createModel(ResultSet rs) throws SQLException {
         ProdutoCategoriaDAO pcdao = new ProdutoCategoriaDAO();
+        ImagemDAO idao = new ImagemDAO();
 
         ProdutoModel pm = new ProdutoModel(
                 rs.getInt("id_produto"),
                 rs.getString("nome"),
-                rs.getString("descricao"), 
+                rs.getString("descricao"),
                 (ProdutoCategoriaModel) pcdao.find(rs.getInt("id_categoria")));
+
+        pm.setImagem((ImagemModel) idao.findPorProduto(pm.getId()));
         return pm;
     }
 
