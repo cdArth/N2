@@ -161,6 +161,11 @@ public class telaCadastro extends javax.swing.JFrame {
         jLabel12.setText("Data de Nascimento:");
 
         txtBirthCadastro.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        txtBirthCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBirthCadastroActionPerformed(evt);
+            }
+        });
 
         jLabel13.setText("UF:");
 
@@ -321,7 +326,37 @@ public class telaCadastro extends javax.swing.JFrame {
 
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
         // Cadastro:
+        
+        private Data nascimento;
+        private String nome, email,cpf, telefone, rua, bairro, cep, uf, senha, confirmaSenha;
+        
+        
+                
+                
+        try{
+            txtNameCadastro.getText().trim() = nome;
+            txtEmailCadastro.getText().trim() = email;
+            txtCPFCadastro.getText().trim() = cpf;
+            txtTelefoneCadastro.getText().trim() = telefone;
+            txtRuaCadastro.getText().trim() = rua;
+            txtBairroCadastro.getText().trim() = bairro;
+            txtCEPCadastro.getText().trim() = cep;
+            txtUFCadastro.getText().trim() = uf;
+            txtSenhaCadastro.getText().trim() = senha;
+            txtConfirmaSenha.getText().trim() = confirmaSenha;
+            
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+            Date nascimento = formato.parse(txtBirthCaastro.getText().trim());
+        }
+        
+        if(nome.isEmpty()){MessageBox.Show("Preencha o nome");}
+        if(email.isEmpty()){MessageBox.Show("E-mail inválido");}
+        if(cpf.isEmpty() || cpf.length() != 14){MessageBox.Show("CPF inválido");}        
     }//GEN-LAST:event_btnCadastroActionPerformed
+
+    private void txtBirthCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBirthCadastroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBirthCadastroActionPerformed
 
     /**
      * @param args the command line arguments

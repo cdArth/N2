@@ -82,6 +82,7 @@
     <Component class="javax.swing.JButton" name="btnCarrinhoUser">
       <Properties>
         <Property name="text" type="java.lang.String" value="Carrinho"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCarrinhoUserActionPerformed"/>
@@ -90,6 +91,7 @@
     <Component class="javax.swing.JButton" name="btnProdutoUser">
       <Properties>
         <Property name="text" type="java.lang.String" value="Produtos"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProdutoUserActionPerformed"/>
