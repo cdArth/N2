@@ -26,9 +26,9 @@
           <Component id="jPanel1" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Component id="btnVoltarC" min="-2" pref="77" max="-2" attributes="0"/>
+              <Component id="btnVoltarC" min="-2" pref="96" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnSobre" min="-2" pref="62" max="-2" attributes="0"/>
+              <Component id="btnSobre" min="-2" pref="82" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -481,7 +481,7 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnVoltarC">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Produtos"/>
+        <Property name="text" type="java.lang.String" value="Voltar"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>
       <Events>

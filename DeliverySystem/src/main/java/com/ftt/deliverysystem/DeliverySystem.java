@@ -19,16 +19,15 @@ public class DeliverySystem {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-      System.err.println("iniciando a aplicação...");
-      
-      DatabaseConnection databaseConnection = new DatabaseConnection();
-      if(databaseConnection.getConnection() == null) {
-          System.err.println("Parece que deu ruim...");
-      }
-      
-      TelaPrincipal telaPrincipal = new TelaPrincipal();
-      
-      telaPrincipal.setVisible(true);
-              
+    System.err.println("iniciando a aplicação...");
+
+    DatabaseConnection databaseConnection = new DatabaseConnection();
+    if (databaseConnection.getConnection() == null) {
+      System.err.println("Parece que deu ruim...");
+    }
+
+    TelaPrincipal telaPrincipal = new TelaPrincipal();
+
+    telaPrincipal.setVisible(true);
   }
 }
